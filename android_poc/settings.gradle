@@ -1,0 +1,13 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_custom_module/.android/include_flutter.groovy'
+))
+rootProject.name = "android_poc"
+
+include ':flutter_custom_module'
+project(':flutter_custom_module').projectDir = new File('../flutter_custom_module')
+
+include ':flutter_custom_module'
+project(':flutter_custom_module').projectDir = new File('../flutter_custom_module')
